@@ -25,7 +25,7 @@ const filterArrowUp = document.querySelectorAll('.filter__arrow-up');
 const filterContent = document.querySelectorAll('.filter__input-container');
 const catalogButtonFilter = document.querySelector('.catalog__button-filter');
 const modalFilter = document.querySelector('.modal-filter');
-const modalFiletButtonClose = document.querySelector('.filter__form-button-close');
+const modalFilterButtonClose = document.querySelector('.modal-filter__form-button-close');
 /* Функция переключатель для раздела FAQ */
 
 const handler = (button, text, up, down) => {
@@ -45,7 +45,7 @@ const handler = (button, text, up, down) => {
 for (const section of sections) {
   if (section.classList.contains('faq')) {
     const faq = document.querySelector('.faq');
-    const faqButtons = faq.querySelectorAll('button');
+    const faqButtons = faq.querySelectorAll('.faq__item-button');
     const faqArrowDown = faq.querySelectorAll('.faq__arrow-down');
     const faqArrowUp = faq.querySelectorAll('.faq__arrow-up');
     const faqText = faq.querySelectorAll('p');
@@ -196,8 +196,8 @@ if (catalogButtonFilter) {
 /* Обработчик события на кнопку "Закрыть фильтр" */
 
 
-if (modalFiletButtonClose) {
-  modalFiletButtonClose.addEventListener('click', () => {
+if (modalFilterButtonClose) {
+  modalFilterButtonClose.addEventListener('click', () => {
     modalFilter.classList.add('hide');
     main.style.opacity = '100%';
     bodyUnfixPosition();
