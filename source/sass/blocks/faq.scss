@@ -4,7 +4,7 @@
   margin: 0 auto 102px;
   @include tablet {
     padding: 0 45px;
-    margin: 0 auto 68px;
+    margin: 0 auto 66px;
   }
   @include mobile {
     padding: 0 15px;
@@ -36,7 +36,7 @@
   border: 1px solid $border-color;
 }
 
-.faq button {
+.faq__item-button {
   width: 100%;
   min-height: 112px;
   display: flex;
@@ -61,7 +61,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include tablet {
+    font-size: 16px;
+  }
   @include mobile {
+    font-size: 14px;
+    line-height: 19.6px;
+    font-weight: 400;
     align-items: flex-start;
   }
 }

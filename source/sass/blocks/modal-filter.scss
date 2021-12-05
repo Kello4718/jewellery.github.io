@@ -16,8 +16,215 @@
 
 .modal-filter__form {
   width: 442px;
+  position: relative;
   background: white;
   @include mobile {
     min-width: 270px;
   }
+}
+
+.modal-filter__form-button-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  border-radius: 50%;
+  background: #1D1613;
+}
+
+.modal-filter__form-button-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.modal-filter__form-button-close path {
+  fill: white;
+}
+
+.modal-filter__form fieldset {
+  border: 1px solid $border-color;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-filter__product-wrapper,
+.modal-filter__material-wrapper,
+.modal-filter__collection-wrapper,
+.modal-filter__price-wrapper, {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 23px 23px 28px 25px;
+  @include tablet {
+    padding: 43px 50px 43px 49px;
+  }
+  @include mobile {
+    min-height: auto;
+    padding: 17px 24px;
+  }
+}
+
+.modal-filter__material-wrapper,
+.modal-filter__collection-wrapper,
+.modal-filter__price-wrapper {
+  padding: 23px 22px 20px 23px;
+}
+
+.modal-filter__product-button-container,
+.modal-filter__material-button-container,
+.modal-filter__collection-button-container,
+.modal-filter__price-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-filter__product-button-container span,
+.modal-filter__material-button-container span,
+.modal-filter__collection-button-container span,
+.modal-filter__price-button-container span {
+  font-size: 16px;
+  line-height: 20.8px;
+}
+
+.modal-filter__input-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 12px 0;
+  padding: 23px 9px 0;
+}
+
+.modal-filter__input-container.hide {
+  display: none;
+}
+
+.modal-filter__input-container label {
+  width: 100%;
+  height: max-content;
+  text-align: left;
+  display: flex;
+}
+
+.modal-filter__input-container input {
+  appearance: none;
+}
+
+
+.modal-filter__input-container span {
+  width: 100%;
+  height: max-content;
+  font-size: 14px;
+  line-height: 18.2px;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  padding: 0 0 0 25px;
+
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    border: 1px solid #A87B62;
+    box-sizing: border-box;
+  }
+}
+
+.modal-filter__input-container input:checked + span::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background: #A87B62;
+  box-sizing: border-box;
+}
+
+
+
+.modal-filter__price-wrapper .camodal-filter__price-button-container {
+  margin: 0 0 4px;
+}
+
+.modal-filter__bar {
+  width: 100%;
+  height: 1px;
+  position: relative;
+  background: #F0EAE4;
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -7px;
+    left: 19.9%;
+    border-radius: 50%;
+    background: #A87B62;
+  }
+  &::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -7px;
+    left: 76.7%;
+    border-radius: 50%;
+    background: #A87B62;
+  }
+}
+
+.modal-filter__bar-main {
+  width: 55%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 24%;
+  background: #A87B62;
+}
+
+.modal-filter__bar-price-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 9% 0 16%;
+}
+
+.modal-filter__bar-price-container p {
+  width: max-content;
+}
+
+.modal-filter__bar-price-container p + p {
+  margin: 0;
+}
+
+.modal-filter__submit,
+.modal-filter__reset {
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20.8px;
+  font-weight: 500;
+  text-align: center;
+  background: #A87B62;
+  border: 1px solid #A87B62;
+  padding: 25px 0 19px;
+  margin: 34px 0 0;
+  cursor: pointer;
+}
+
+.modal-filter__reset {
+  background: transparent;
+  padding: 23px 0 21px;
+  margin: 27px 0 0;
 }

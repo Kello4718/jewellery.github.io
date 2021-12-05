@@ -307,7 +307,7 @@
       <h2>Frequently asked questions</h2>
       <ul>
         <li>
-          <button>
+          <div class="faq__item-button">
             <div>
               <span>What materials are the jewellery made&nbsp;of?</span>
               <svg class="faq__arrow-down hide" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -318,10 +318,10 @@
               </svg>
             </div>
             <p>Our jewellerry is&nbsp;made of&nbsp;solid gold, silver or&nbsp;leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </button>
+          </div>
         </li>
         <li>
-          <button>
+          <div class="faq__item-button">
             <div>
               <span>Which countries do&nbsp;you deliver&nbsp;to?</span>
               <svg class="faq__arrow-down" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -332,10 +332,10 @@
               </svg>
             </div>
             <p class="hide">Our jewellerry is&nbsp;made of&nbsp;solid gold, silver or&nbsp;leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </button>
+          </div>
         </li>
         <li>
-          <button>
+          <div class="faq__item-button">
             <div>
               <span>What are the payment methods?</span>
               <svg class="faq__arrow-down" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -346,10 +346,10 @@
               </svg>
             </div>
             <p class="hide">Our jewellerry is&nbsp;made of&nbsp;solid gold, silver or&nbsp;leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </button>
+          </div>
         </li>
         <li>
-          <button>
+          <div class="faq__item-button">
             <div>
               <span>Can I&nbsp;return the jewellery if&nbsp;it&nbsp;didn&rsquo;t fit&nbsp;me?</span>
               <svg class="faq__arrow-down" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -360,7 +360,7 @@
               </svg>
             </div>
             <p class="hide">Our jewellerry is&nbsp;made of&nbsp;solid gold, silver or&nbsp;leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </button>
+          </div>
         </li>
       </ul>
     </section>
@@ -453,8 +453,8 @@
       <section class="footer__subscription">
         <h2>The good stuff in&nbsp;your inbox</h2>
         <p>News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
-        <form action="">
-          <input type="email" name="" id="" placeholder="Your E-mail">
+        <form>
+          <input type="email" name="email" id="email-id" placeholder="Your E-mail">
           <button>
             <span>Sign&nbsp;Up</span>
             <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -464,6 +464,7 @@
         </form>
       </section>
       <section class="footer__navigation">
+        <h2 class="visually-hidden">Навигация по сайту</h2>
         <nav>
           <ul>
             <li>
@@ -496,6 +497,7 @@
         </nav>
       </section>
       <section class="footer__social">
+        <h2 class="visually-hidden">Социальные сети</h2>
         <ul>
           <li>
             <a href="#">
@@ -533,7 +535,7 @@
       </section>
       <div class="login hide">
         <div class="login__wrapper">
-          <form action="">
+          <form>
             <picture>
               <source type="image/webp" srcset="img/login/login-background-desktop.webp, img/login/login-background-desktop@2x.webp 2x">
               <!--1x: width: 442 height: 138 2x: width: 884 height: 276-->
@@ -551,10 +553,10 @@
             </button>
             <h2>Log In</h2>
             <label class="login__form-email">
-              <input type="email" name="" placeholder="Your E-mail" required autofocus>
+              <input type="email" name="email" placeholder="Your E-mail" required autofocus>
             </label>
             <label class="login__form-password">
-              <input type="password" name="" placeholder="Password">
+              <input type="password" name="password" placeholder="Password">
             </label>
             <a class="login__form-forgot" href="">Forgot your password?</a>
             <button class="login__form-submit" type="submit">Log In</button>
