@@ -1,0 +1,107 @@
+@include font("Poppins", "Poppins-Regular", 400);
+@include font("Poppins", "Poppins-Medium", 500);
+@include font("Poppins", "Poppins-Bold", 700);
+@include font("CormorantGaramond", "CormorantGaramond-Regular", 400);
+@include font("CormorantGaramond", "CormorantGaramond-SemiBold", 600);
+@include font("CormorantGaramond", "CormorantGaramond-Bold", 700);
+
+
+html {
+  scroll-behavior: smooth;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "CormorantGaramond", "Arial", sans-serif;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.body {
+  height: 100%;
+
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20.8px;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-flow: column;
+  color: $text-color;
+  margin: 0 auto;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  border: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  padding: 0;
+  margin: -1px;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color
+}
+
+img {
+  border-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

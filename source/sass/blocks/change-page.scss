@@ -1,0 +1,20 @@
+.change-page {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-page ul {
+  display: flex;
+  gap: 0 100px;
+}
+
+.change-page li {
+  font-size: 30px;
+}
+
+.change-page a {
+  color: $text-color;
+}

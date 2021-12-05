@@ -1,0 +1,24 @@
+// Global
+
+//@import "global/venders.scss";
+@import "global/viewports.scss";
+@import "global/color.scss";
+@import "global/function.scss";
+@import "global/global.scss";
+
+// Blocks
+
+@import "blocks/header.scss";
+@import "blocks/banner.scss";
+@import "blocks/slider.scss";
+@import "blocks/swiper.scss";
+@import "blocks/blog.scss";
+@import "blocks/faq.scss";
+@import "blocks/more.scss";
+@import "blocks/footer.scss";
+@import "blocks/login.scss";
+@import "blocks/change-page.scss";
+@import "blocks/catalog-banner.scss";
+@import "blocks/catalog.scss";
+@import "blocks/filter.scss";
+@import "blocks/modal-filter.scss";

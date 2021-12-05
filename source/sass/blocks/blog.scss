@@ -1,0 +1,276 @@
+.blog {
+  max-width: 1366px;
+  padding: 0 98px;
+  margin: 0 auto 121px;
+  @include tablet {
+    padding: 0 45px;
+    margin: 0 auto 68px;
+  }
+  @include mobile {
+    padding: 0 15px;
+    margin: 0 auto 59px;
+  }
+}
+
+.blog h2 {
+  font-size: 36px;
+  line-height: 34px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 23px;
+  @include tablet {
+    line-height: 38px;
+    margin: 0 0 21px;
+  }
+}
+
+.blog a {
+  width: max-content;
+  line-height: 26px;
+  text-align: center;
+  display: block;
+  color: $text-color;
+  border-bottom: 1px solid $border-color;
+  margin: 0 auto 59px;
+  @include tablet {
+    margin: 0 auto 60px;
+  }
+  @include mobile {
+    margin: 0 auto 52px;
+  }
+}
+
+.blog ul {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 44px 0;
+  }
+  @include mobile {
+    width: 290px;
+    gap: 37px 0;
+    margin: 0 auto;
+  }
+}
+
+.blog li {
+  width: 100%;
+  max-width: 570px;
+  @include tablet {
+    max-width: none;
+  }
+}
+
+.blog li:nth-child(3n + 1) {
+  grid-column: 1;
+  @include tablet {
+    grid-column: auto;
+  }
+}
+
+.blog li:nth-child(3n + 2) {
+  grid-column: 1;
+  @include tablet {
+    grid-column: auto;
+  }
+}
+
+.blog li:nth-child(3n + 3) {
+  grid-row: span 2;
+  grid-column: 2;
+  position: relative;
+  @include tablet {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
+.blog article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  @include tablet {
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: 49.93% 1fr;
+  }
+  @include mobile {
+    width: 290px;
+    height: auto;
+    min-height: 256px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.blog picture {
+  width: 100%;
+  max-width: 285px;
+  height: auto;
+  @include tablet {
+    min-width: 339px;
+    width: 100%;
+    max-width: none;
+    min-height: 300px;
+  }
+  @include mobile {
+    width: 290px;
+    min-width: auto;
+    height: 256px;
+    min-height: auto;
+  }
+}
+
+.blog img {
+  width: 100%;
+  height: 100%;
+  @include tablet {
+    min-width: 339px;
+    max-width: 100%;
+    min-height: 300px;
+  }
+  @include mobile {
+    width: 290px;
+    min-width: auto;
+    height: 256px;
+  }
+}
+
+.blog__article-info {
+  width: 285px;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: $blog-background-color;
+  padding: 66px 20px 12px;
+  @include tablet {
+    width: 100%;
+    height: auto;
+  }
+  @include mobile {
+    width: 290px;
+    height: auto;
+    min-height: 256px;
+    padding: 44px 0 0;
+  }
+}
+
+.blog__article-info p {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin: 0 0 11px;
+  @include tablet {
+    color: #9B9997;
+  }
+}
+
+.blog__article-info h3 {
+  font-family: "CormorantGaramond", "Arial", sans-serif;
+  font-size: 26px;
+  line-height: 33.8px;
+  font-weight: 600;
+  margin: 0 0 36px;
+  @include tablet {
+    color: #000000;
+    margin: 0 0 36px;
+  }
+  @include mobile {
+    line-height: 34px;
+  }
+}
+
+.blog__article-info a {
+  font-weight: 500;
+}
+
+.blog__article-trends {
+  position: relative;
+}
+
+.blog__article-trends-info {
+  min-height: 301px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  @include tablet {
+    min-height: 300px;
+    position: initial;
+    padding: 82px 0 0;
+    order: 2;
+  }
+  @include mobile {
+    min-height: 258px;
+    padding: 62px 0 0;
+  }
+}
+
+.blog__article-trends h3 {
+  @include tablet {
+    margin: 0 0 36px;
+  }
+  @include mobile {
+    margin: 0 0 34px;
+  }
+
+}
+
+.blog__article-trends picture {
+  width: 100%;
+  max-width: 570px;
+  height: auto;
+  @include tablet {
+    min-width: 339px;
+    max-width: 100%;
+    min-height: 300px;
+    order: 1;
+  }
+  @include mobile {
+    min-width: auto;
+    width: 290px;
+    min-height: auto;
+    height: 256px;
+  }
+}
+
+.blog__article-trends img {
+  width: 100%;
+  height: 100%;
+  @include tablet {
+    order: 1;
+  }
+  @include mobile {
+    width: 290px;
+    height: 256px;
+  }
+}
+
+.blog__article-power-info {
+  order: 0;
+  @include tablet {
+    order: 1;
+  }
+  @include mobile {
+    order: 1;
+  }
+}
+
+.blog__article-power h3 {
+  @include mobile {
+    margin: 0 0 37px;
+  }
+}
+
+.blog__article-power picture,
+.blog__article-power img {
+  order: 1;
+  @include tablet {
+    order: 2;
+  }
+  @include mobile {
+    order: 0;
+  }
+}

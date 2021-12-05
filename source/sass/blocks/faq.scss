@@ -1,0 +1,101 @@
+.faq {
+  max-width: 1366px;
+  padding: 0 98px;
+  margin: 0 auto 102px;
+  @include tablet {
+    padding: 0 45px;
+    margin: 0 auto 68px;
+  }
+  @include mobile {
+    padding: 0 15px;
+    margin: 0 auto 61px;
+  }
+}
+
+.faq h2 {
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin: 0 0 50px;
+  @include mobile {
+    line-height: 43px;
+    margin: 0 0 29px;
+  }
+}
+
+.faq ul {
+  padding: 0 100px;
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.faq li {
+  border: 1px solid $border-color;
+}
+
+.faq button {
+  width: 100%;
+  min-height: 112px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 44px 48px 40px 42px;
+  cursor: pointer;
+  @include tablet {
+    padding: 43px 50px 41px 49px;
+  }
+  @include mobile {
+    min-height: auto;
+    padding: 17px 24px 18px;
+  }
+}
+
+.faq div {
+  width: 100%;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mobile {
+    align-items: flex-start;
+  }
+}
+
+.faq span {
+  @include mobile {
+    width: 83%;
+    font-size: 16px;
+    line-height: 22.4px;
+    text-align: left;
+  }
+}
+
+.faq svg {
+  @include mobile {
+    width: 20px;
+    height: 10px;
+    margin: 8px 0 0;
+  }
+}
+
+.faq p {
+  width: 60%;
+  line-height: 20.8px;
+  text-align: left;
+  padding: 9px 0 0 7px;
+  @include tablet {
+    width: 98%;
+    padding: 26px 0 0;
+  }
+  @include mobile {
+    width: 84%;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 14px 0 0;
+  }
+}

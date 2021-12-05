@@ -1,0 +1,23 @@
+.modal-filter {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text-color;
+}
+
+.modal-filter.hide {
+  display: none;
+}
+
+.modal-filter__form {
+  width: 442px;
+  background: white;
+  @include mobile {
+    min-width: 270px;
+  }
+}

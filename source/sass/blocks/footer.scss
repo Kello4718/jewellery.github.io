@@ -1,0 +1,198 @@
+.footer {
+  color: $white;
+  background: $black;
+}
+
+.footer__wrapper {
+  max-width: 1276px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 97px 45px;
+  margin: 0 auto;
+  @include tablet {
+    padding: 60px 45px;
+  }
+  @include mobile {
+    padding: 48px 15px 60px;
+  }
+}
+
+.footer__subscription {
+  width: 42.8%;
+  @include tablet {
+    width: 100%;
+    margin: 0 0 44px;
+  }
+}
+
+.footer__subscription h2 {
+  font-size: 34px;
+  letter-spacing: 0.024em;
+  padding: 5px 0 0 8px;
+  margin: 0 0 21px;
+  @include tablet {
+    padding: 2px 0 0;
+  }
+  @include mobile {
+    line-height: 44.2px;
+    margin: 0 0 14px;
+  }
+}
+
+.footer__subscription p {
+  letter-spacing: 0.01em;
+  color: $grey;
+  padding: 0 0 0 8px;
+  margin: 0 0 41px;
+  @include mobile {
+    padding: 0;
+    margin: 0 0 40px;
+  }
+}
+
+.footer__subscription form {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $white;
+  padding: 0 0 8px;
+  @include tablet {
+    width: 82.6%;
+    padding: 0 0 8px;
+  }
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.footer__subscription input {
+  font-size: 14px;
+  border: none;
+  color: $grey;
+  background: transparent;
+  padding: 2px 0 0 8px;
+  cursor: pointer;
+  @include tablet {
+    padding: 2px 0 0;
+  }
+}
+
+.footer__subscription button {
+  width: 103px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: inherit;
+  padding: 5px 0 0;
+  cursor: pointer;
+  @include tablet {
+    padding: 2px 0 0;
+  }
+}
+
+.footer__navigation {
+  width: 32.5%;
+  @include tablet {
+    width: 59%;
+  }
+  @include mobile {
+    width: 100%;
+    margin: 0 0 45px;
+  }
+}
+
+.footer__navigation nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 21px 44px;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 41px 20px;
+  }
+}
+
+.footer__navigation ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 21px 44px;
+  padding: 0 0 0 5px;
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.footer__navigation ul + ul {
+  padding: 0 0 0 32px;
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.footer__navigation a {
+  color: $white;
+}
+
+.footer__social {
+  width: 10.4%;
+  font-weight: 500;
+  @include tablet {
+    width: 32.4%;
+  }
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.footer__social ul {
+  display: flex;
+  flex-flow: column;
+  gap: 22px;
+  @include mobile {
+    flex-flow: row;
+    gap: 30px;
+  }
+}
+
+.footer__social a {
+  display: flex;
+  justify-content: space-between;
+  color: $white;
+  @include tablet {
+    justify-content: flex-start;
+  }
+}
+
+.footer__social span {
+  width: 73%;
+  @include tablet {
+    margin: 0 0 0 15px;
+  }
+  @include mobile {
+    display: none;
+  }
+}
+
+.footer__social svg {
+  @include mobile {
+    width: 20px;
+    height: 21px;
+  }
+}
+
+.footer__social li:nth-child(1) svg {
+  margin: 0 0 0 4px;
+  @include mobile {
+    width: 12px;
+    height: 21px;
+    margin: 0;
+  }
+}
+
+.footer__social li:nth-child(1) span {
+  @include tablet {
+    margin: 0 0 0 22px;
+  }
+}
