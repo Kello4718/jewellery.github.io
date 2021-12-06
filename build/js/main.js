@@ -1,5 +1,3 @@
-"use strict";
-
 // Переменные
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
@@ -26,6 +24,7 @@ const filterContent = document.querySelectorAll('.catalog__filter-input-containe
 const catalogButtonFilter = document.querySelector('.catalog__button-filter');
 const modalFilter = document.querySelector('.modal-filter');
 const modalFilterButtonClose = document.querySelector('.modal-filter__form-button-close');
+
 /* Функция переключатель для раздела FAQ */
 
 const handler = (button, text, up, down) => {
@@ -50,18 +49,18 @@ for (const section of sections) {
     const faqArrowUp = faq.querySelectorAll('.faq__arrow-up');
     const faqText = faq.querySelectorAll('p');
     /* Цикл для всех кнопок раздела FAQ */
-
     for (let i = 0; i < faqButtons.length; i++) {
       handler(faqButtons[i], faqText[i], faqArrowUp[i], faqArrowDown[i]);
     }
   }
 }
 
+
 for (let i = 0; i < filterButtons.length; i++) {
   handler(filterButtons[i], filterContent[i], filterArrowUp[i], filterArrowDown[i]);
 }
-/* Код для работы меню */
 
+/* Код для работы меню */
 
 headerMenu.addEventListener('click', () => {
   header.classList.toggle('no-js');
@@ -72,6 +71,7 @@ headerMenu.addEventListener('click', () => {
   headerCart.classList.toggle('no-js');
   headerList.classList.toggle('no-js');
 });
+
 window.addEventListener('load', () => {
   header.classList.remove('no-js');
   headerMenu.classList.remove('no-js');
@@ -80,37 +80,39 @@ window.addEventListener('load', () => {
   headerAuth.classList.remove('no-js');
   headerCart.classList.remove('no-js');
   headerList.classList.remove('no-js');
-}); // Функция, которая запрещает скролл при открытом модальном окне
+});
+
+// Функция, которая запрещает скролл при открытом модальном окне
 
 const bodyFixPosition = () => {
-  setTimeout(() => {
-    if (!body.hasAttribute('data-body-scroll-fix')) {
-      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      body.setAttribute('data-body-scroll-fix', scrollPosition);
+
+  setTimeout( () => {
+    if ( !body.hasAttribute('data-body-scroll-fix') ) {
+      body.setAttribute('data-body-scroll-fix', 0);
       body.style.overflow = 'hidden';
       body.style.position = 'fixed';
-      body.style.top = `-${scrollPosition}px`;
+      body.style.top = '-0px';
       body.style.left = '0';
       body.style.width = '100%';
     }
-  }, 15);
-}; // Функция, которая разрешает скролл страницы при закрытии модального окна
+  }, 15 );
+};
 
+// Функция, которая разрешает скролл страницы при закрытии модального окна
 
 const bodyUnfixPosition = () => {
-  if (body.hasAttribute('data-body-scroll-fix')) {
-    const scrollPosition = body.getAttribute('data-body-scroll-fix');
+  if ( body.hasAttribute('data-body-scroll-fix') ) {
     body.removeAttribute('data-body-scroll-fix');
     body.style.overflow = '';
     body.style.position = '';
     body.style.top = '';
     body.style.left = '';
     body.style.width = '';
-    window.scroll(0, scrollPosition);
+    window.scroll(0, 0);
   }
 };
 
-loginLogo.addEventListener('click', evt => {
+loginLogo.addEventListener('click', (evt) => {
   evt.preventDefault();
   logoImage.style.display = 'none';
   login.classList.remove('hide');
@@ -118,63 +120,72 @@ loginLogo.addEventListener('click', evt => {
   bodyFixPosition();
   main.style.opacity = '20%';
 });
-menuLogin.addEventListener('click', evt => {
-  evt.preventDefault();
-  logoImage.style.display = 'none';
-  login.classList.remove('hide');
-  login.classList.add('show');
-  bodyFixPosition();
-  main.style.opacity = '20%';
-}); // Код по работе с модальным окном
 
-loginLogo.addEventListener('click', evt => {
+menuLogin.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  logoImage.style.display = 'none';
+  login.classList.remove('hide');
+  login.classList.add('show');
+  bodyFixPosition();
+  main.style.opacity = '20%';
+});
+
+// Код по работе с модальным окном
+
+loginLogo.addEventListener('click', (evt) => {
   evt.preventDefault();
   login.classList.remove('hide');
   loginEmail.focus();
   bodyFixPosition();
 });
-menuLogin.addEventListener('click', evt => {
+
+menuLogin.addEventListener('click', (evt) => {
   evt.preventDefault();
   login.classList.remove('hide');
   loginEmail.focus();
   bodyFixPosition();
 });
+
 loginButtonClose.addEventListener('click', () => {
   login.classList.add('hide');
   main.style.opacity = '100%';
   bodyUnfixPosition();
 });
-document.addEventListener('keydown', evt => {
+
+document.addEventListener('keydown', (evt) => {
   if (evt.key === 'ESC' || evt.key === 'Escape') {
     login.classList.add('hide');
     main.style.opacity = '100%';
     bodyUnfixPosition();
   }
 });
-login.addEventListener('click', evt => {
+
+login.addEventListener('click', (evt) => {
   if (evt.target === login) {
     login.classList.add('hide');
     main.style.opacity = '100%';
     bodyUnfixPosition();
   }
 });
-menuLogin.addEventListener('click', evt => {
+
+menuLogin.addEventListener('click', (evt) => {
   if (evt.target === login) {
     login.classList.add('hide');
     main.style.opacity = '100%';
     bodyUnfixPosition();
   }
-}); // Функция, по отправки формы
+});
+
+// Функция, по отправки формы
 
 const toPushForm = (form, formEmail) => {
-  form.addEventListener('submit', evt => {
+  form.addEventListener('submit', (evt) => {
     evt.preventDefault();
     localStorage.setItem('email', formEmail.value);
     formEmail.value = '';
     login.classList.add('hide');
     main.style.opacity = '100%';
     bodyUnfixPosition();
-
     if (evt.target === login) {
       login.classList.add('hide');
       main.style.opacity = '100%';
@@ -184,6 +195,7 @@ const toPushForm = (form, formEmail) => {
 };
 
 toPushForm(loginForm, loginEmail);
+
 /* Обработчик события на кнопку фильтра */
 
 if (catalogButtonFilter) {
@@ -193,9 +205,8 @@ if (catalogButtonFilter) {
     bodyFixPosition();
   });
 }
+
 /* Обработчик события на кнопку "Закрыть фильтр" */
-
-
 if (modalFilterButtonClose) {
   modalFilterButtonClose.addEventListener('click', () => {
     modalFilter.classList.add('hide');
@@ -203,21 +214,21 @@ if (modalFilterButtonClose) {
     bodyUnfixPosition();
   });
 }
-/* Слайдер */
 
+/* Слайдер */
 /* eslint-disable */
 
-
+/* eslint-disable */
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: false,
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
   navigation: {
     nextEl: '.swiper-button-next-slide',
-    prevEl: '.swiper-button-prev-slide'
+    prevEl: '.swiper-button-prev-slide',
   },
   spaceBetween: 30,
   breakpoints: {
@@ -232,8 +243,8 @@ const swiper = new Swiper('.swiper', {
         type: 'fraction',
         renderFraction: function (currentClass, totalClass) {
           return `<ul><li class="${currentClass}"></li><li>of</li><li class="${totalClass}"></li></ul>`;
-        }
-      }
+        },
+      },
     },
     768: {
       slidesPerView: 2,
@@ -245,8 +256,8 @@ const swiper = new Swiper('.swiper', {
         clickable: true,
         renderBullet: function (index, className) {
           return `<span class="${className}">${index + 1}</span>`;
-        }
-      }
+        },
+      },
     },
     1024: {
       slidesPerView: 4,
@@ -258,8 +269,9 @@ const swiper = new Swiper('.swiper', {
         clickable: true,
         renderBullet: function (index, className) {
           return `<span class="${className}">${index + 1}</span>`;
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
+
