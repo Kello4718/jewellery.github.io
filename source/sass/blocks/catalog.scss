@@ -16,28 +16,7 @@
   }
 }
 
-.catalog__button-filter {
-  display: none;
-  @include tablet {
-    width: 678px;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 20.8px;
-    font-weight: 500;
-    text-align: center;
-    display: block;
-    color: #FFFFFF;
-    background: #A87B62;
-    border: 1px solid #A87B62;
-    padding: 23px 0;
-    margin: 0 auto 49px;
-  }
-  @include mobile {
-    margin: 0 auto 39px;
-  }
-}
-
-.catalog__filter-form {
+.catalog form {
   width: 21.37%;
   position: relative;
   padding: 0;
@@ -68,7 +47,10 @@
   fill: white;
 }
 
-.catalog__filter-form fieldset {
+.catalog__filter-product,
+.catalog__filter-collection,
+.catalog__filter-price,
+.catalog__filter-material {
   border: 1px solid $border-color;
   padding: 0;
   margin: 0;
@@ -231,8 +213,8 @@
   margin: 0;
 }
 
-.catalog__form-submit,
-.catalog__form-reset {
+.catalog button[type=submit],
+.catalog button[type=reset] {
   width: 100%;
   font-family: inherit;
   font-size: 16px;
@@ -247,7 +229,7 @@
   cursor: pointer;
 }
 
-.catalog__form-reset {
+.catalog button[type=reset] {
   color: $text-color;
   background: transparent;
   padding: 23px 0 21px;
@@ -348,5 +330,26 @@
   @include mobile {
     gap: 20px 23px;
     margin: 0;
+  }
+}
+
+.catalog__button-filter {
+  display: none;
+  @include tablet {
+    width: 678px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 20.8px;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    color: #FFFFFF;
+    background: #A87B62;
+    border: 1px solid #A87B62;
+    padding: 23px 0;
+    margin: 0 auto 49px;
+  }
+  @include mobile {
+    margin: 0 auto 39px;
   }
 }

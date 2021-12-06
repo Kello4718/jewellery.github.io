@@ -87,8 +87,8 @@
     <section class="catalog">
       <h2 class="visually-hidden">Список наших товаров</h2>
       <button class="catalog__button-filter">Filter</button>
-      <form class="catalog__filter-form">
-        <fieldset class="catalog__filter-product">
+      <form>
+        <div class="catalog__filter-product">
           <div class="catalog__filter-product-wrapper">
             <div class="catalog__filter-product-button-container catalog__filter-button-container">
               <span>Product</span>
@@ -118,8 +118,8 @@
               </label>
             </div>
           </div>
-        </fieldset>
-        <fieldset class="catalog__filter-material">
+        </div>
+        <div class="catalog__filter-material">
           <div class="catalog__filter-material-wrapper">
             <div class="catalog__filter-material-button-container catalog__filter-button-container">
               <span>Material</span>
@@ -141,8 +141,8 @@
               </label>
             </div>
           </div>
-        </fieldset>
-        <fieldset class="catalog__filter-collection">
+        </div>
+        <div class="catalog__filter-collection">
           <div class="catalog__filter-collection-wrapper">
             <div class="catalog__filter-collection-button-container catalog__filter-button-container">
               <span>Collection</span>
@@ -164,8 +164,8 @@
               </label>
             </div>
           </div>
-        </fieldset>
-        <fieldset class="catalog__filter-price">
+        </div>
+        <div class="catalog__filter-price">
           <div class="catalog__filter-price-wrapper">
             <div class="catalog__filter-price-button-container catalog__filter-button-container">
               <span>Price</span>
@@ -186,9 +186,9 @@
               </div>
             </div>
           </div>
-        </fieldset>
-        <button class="catalog__form-submit" type="submit">Apply</button>
-        <button class="catalog__form-reset" type="reset">Clear All</button>
+        </div>
+        <button type="submit">Apply</button>
+        <button type="reset">Clear All</button>
       </form>
       <ul>
         <li>
@@ -373,15 +373,15 @@
         </li>
       </ul>
       <div class="catalog__pagination">
-        <button class="catalog__pagination-button-previous">Previous</button>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        <button class="catalog__pagination-button-next">Next</button>
+        <span class="catalog__pagination-button-previous">Previous</span>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+        <span class="catalog__pagination-button-next">Next</span>
       </div>
     </section>
   </main>

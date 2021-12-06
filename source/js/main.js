@@ -88,11 +88,10 @@ const bodyFixPosition = () => {
 
   setTimeout( () => {
     if ( !body.hasAttribute('data-body-scroll-fix') ) {
-      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      body.setAttribute('data-body-scroll-fix', scrollPosition);
+      body.setAttribute('data-body-scroll-fix', 0);
       body.style.overflow = 'hidden';
       body.style.position = 'fixed';
-      body.style.top = `-${  scrollPosition  }px`;
+      body.style.top = '-0px';
       body.style.left = '0';
       body.style.width = '100%';
     }
@@ -103,14 +102,13 @@ const bodyFixPosition = () => {
 
 const bodyUnfixPosition = () => {
   if ( body.hasAttribute('data-body-scroll-fix') ) {
-    const scrollPosition = body.getAttribute('data-body-scroll-fix');
     body.removeAttribute('data-body-scroll-fix');
     body.style.overflow = '';
     body.style.position = '';
     body.style.top = '';
     body.style.left = '';
     body.style.width = '';
-    window.scroll(0, scrollPosition);
+    window.scroll(0, 0);
   }
 };
 
@@ -219,6 +217,8 @@ if (modalFilterButtonClose) {
 
 /* Слайдер */
 /* eslint-disable */
+
+/* eslint-disable */
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: false,
@@ -274,3 +274,4 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
+
