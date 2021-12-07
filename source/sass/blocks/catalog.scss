@@ -56,10 +56,10 @@
   margin: 0;
 }
 
-.catalog__filter-product-wrapper,
-.catalog__filter-material-wrapper,
-.catalog__filter-collection-wrapper,
-.catalog__filter-price-wrapper, {
+.catalog__filter-product-wrapper
+.catalog__filter-material-wrapper
+.catalog__filter-collection-wrapper
+.catalog__filter-price-wrapper {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
