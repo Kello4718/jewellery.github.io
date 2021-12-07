@@ -37,6 +37,7 @@
     "gulp-svgstore": "^8.0.0",
     "gulp-terser": "^2.0.1",
     "gulp-webp": "^4.0.1",
+    "postcss": "^8.4.4",
     "postcss-csso": "^5.0.1",
     "rollup-stream": "^1.24.1",
     "sass": "^1.38.2",
