@@ -89,6 +89,10 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px red;
+  }
 }
 
 .catalog__filter-product-button-container span,
@@ -120,6 +124,10 @@
 
 .catalog__filter-input-container input {
   appearance: none;
+}
+
+.catalog__filter-input-container input:focus + span::before {
+  box-shadow: 0 0 2px 2px red;
 }
 
 
@@ -156,6 +164,9 @@
   box-sizing: border-box;
 }
 
+.catalog__filter-input-container input:checked:focus + span::after {
+  box-shadow: 0 0 2px 2px red;
+}
 
 
 .catalog__filter-price-wrapper .catalog__filter-price-button-container {

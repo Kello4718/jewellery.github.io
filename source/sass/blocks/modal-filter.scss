@@ -1,4 +1,4 @@
-.catalog__filter {
+.modal-filter {
   width: 100%;
   height: 100%;
   display: flex;
@@ -12,8 +12,11 @@
   padding: 27px 0 0;
 }
 
+.modal-filter.hide {
+  display: none;
+}
 
-.catalog__filter-form {
+.modal-filter form {
   width: 458px;
   height: 841px;
   height: auto;
@@ -28,7 +31,7 @@
   }
 }
 
-.catalog__filter-form-button-close {
+.modal-filter__form-button-close {
   width: 32px;
   height: 32px;
   display: flex;
@@ -45,29 +48,29 @@
   }
 }
 
-.catalog__filter-form-button-close svg {
+.modal-filter__form-button-close svg {
   width: 14px;
   height: 14px;
 }
 
-.catalog__filter-form-button-close path {
+.modal-filter__form-button-close path {
   fill: white;
 }
 
-.catalog__filter-price,
-.catalog__filter-collection,
-.catalog__filter-product,
-.catalog__filter-material {
+.modal-filter__price,
+.modal-filter__collection,
+.modal-filter__product,
+.modal-filter__material {
   border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
   padding: 0;
   margin: 0;
 }
 
-/*.catalog__filter-price,
-.catalog__filter-collection,
-.catalog__filter-product,
-.catalog__filter-material {
+.modal-filter__price,
+.modal-filter__collection,
+.modal-filter__product,
+.modal-filter__material {
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -80,9 +83,9 @@
     min-height: auto;
     padding: 17px 24px;
   }
-}*/
+}
 
-.catalog__filter-button-container {
+.modal-filter__button-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -94,12 +97,12 @@
   }
 }
 
-.catalog__filter-button-container span {
+.modal-filter__button-container span {
   font-size: 16px;
   line-height: 20.8px;
 }
 
-.catalog__filter-input-container {
+.modal-filter__input-container {
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -107,11 +110,11 @@
   padding: 23px 9px 0;
 }
 
-.catalog__filter-input-container.hide {
+.modal-filter__input-container.hide {
   display: none;
 }
 
-.catalog__filter-input-container label {
+.modal-filter__input-container label {
   width: 100%;
   height: max-content;
   text-align: left;
@@ -119,17 +122,17 @@
 
 }
 
-.catalog__filter-input-container input {
+.modal-filter__input-container input {
   appearance: none;
 
 }
 
-.catalog__filter-input-container input:focus + span::before {
+.modal-filter__input-container input:focus + span::before {
   box-shadow: 0 0 2px 2px red;
 }
 
 
-.catalog__filter-input-container span {
+.modal-filter__input-container span {
   width: 100%;
   height: max-content;
   font-size: 14px;
@@ -157,7 +160,7 @@
   }
 }
 
-.catalog__filter-input-container input:checked + span::after {
+.modal-filter__input-container input:checked + span::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -168,21 +171,21 @@
   box-sizing: border-box;
 }
 
-.catalog__filter-input-container input:checked:focus + span::after {
+.modal-filter__input-container input:checked:focus + span::after {
   box-shadow: 0 0 2px 2px red;
 }
 
-.catalog__filter-form-fieldset-material-wrapper,
-.catalog__filter-form-fieldset-collection-wrapper,
-.catalog__filter-form-fieldset-price-wrapper {
+.modal-filter__form-fieldset-material-wrapper,
+.modal-filter__form-fieldset-collection-wrapper,
+.modal-filter__form-fieldset-price-wrapper {
   padding: 23px 22px 20px 23px;
 }
 
-.catalog__filter-form-fieldset-price-wrapper .catalog__filter-button-container {
+.modal-filter__form-fieldset-price-wrapper .modal-filter__button-container {
   margin: 0 0 4px;
 }
 
-.catalog__filter-bar {
+.modal-filter__bar {
   width: 100%;
   height: 1px;
   position: relative;
@@ -209,7 +212,7 @@
   }
 }
 
-.catalog__filter-bar .catalog__filter-bar-main {
+.modal-filter__bar .modal-filter__bar-main {
   width: 50%;
   height: 1px;
   position: absolute;
@@ -218,23 +221,23 @@
   background: #A87B62;
 }
 
-.catalog__filter-bar-price-container {
+.modal-filter__bar-price-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 9% 0 16%;
 }
 
-.catalog__filter-bar-price-container p {
+.modal-filter__bar-price-container p {
   width: max-content;
 }
 
-.catalog__filter-bar-price-container p + p {
+.modal-filter__bar-price-container p + p {
   margin: 0;
 }
 
-.catalog__filter-submit,
-.catalog__filter-reset {
+.modal__submit,
+.modal__reset {
   width: 362px;
   font-family: inherit;
   font-size: 16px;
@@ -252,7 +255,7 @@
   }
 }
 
-.catalog__filter-reset {
+.modal__reset {
   background: transparent;
   padding: 23px 0 21px;
   margin: 27px auto 0;
@@ -260,3 +263,4 @@
     margin: 20px auto 30px;
   }
 }
+

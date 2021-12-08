@@ -231,11 +231,9 @@ toPushForm(loginForm, loginEmail);
 
 if (catalogButtonFilter) {
   catalogButtonFilter.addEventListener('click', () => {
-    if (modalFilter) {
-      modalFilter.classList.remove('hide');
-      main.style.opacity = '10%';
-      bodyFixPosition();
-    }
+    modalFilter.classList.remove('hide');
+    main.style.opacity = '10%';
+    bodyFixPosition();
   });
 }
 

@@ -82,9 +82,21 @@
   grid-row: span 2;
   grid-column: 2;
   position: relative;
+  background:  brown url('../img/index/blog-trends-desktop.jpg') no-repeat 0 0 / cover;
+  @include retina {
+    background:  brown url('../img/index/blog-trends-desktop@2x.jpg') no-repeat 0 0 / cover;
+  }
   @include tablet {
     grid-row: auto;
     grid-column: auto;
+    background: none;
+  }
+}
+
+.blog li:nth-child(3n + 3) picture {
+  display: none;
+  @include tablet {
+    display: initial;
   }
 }
 
