@@ -265,12 +265,11 @@
 .header.open {
   @include tablet {
     width: 100vw;
-    height: 100vh;
     background: $menu-background;
     padding: 29px 45px 74px;
   }
   @include mobile {
-    padding: 19px 16px 44px;
+    padding: 19px 16px 245px;
   }
 }
 

@@ -9,6 +9,8 @@ const headerAuth = header.querySelector('.header__auth-container');
 const headerCart = header.querySelector('.header__auth-container-cart-tablet');
 const headerList = header.querySelector('.header__navigation-list-container');
 const main = document.querySelector('main');
+const swiperLeft = document.querySelector('.swiper-button-prev-slide');
+const swiperRight = document.querySelector('.swiper-button-next-slide');
 const sections = document.querySelectorAll('section');
 const login = document.querySelector('.login');
 const loginForm = login.querySelector('form');
@@ -30,10 +32,18 @@ const modalContent = document.querySelectorAll('.modal-filter__input-container')
 const modalArrowDown = document.querySelectorAll('.modal-filter__arrow-down');
 const modalArrowUp = document.querySelectorAll('.modal-filter__arrow-up');
 const pageWidth = document.documentElement.scrollWidth;
+const footer = document.querySelector('footer');
 
 if (pageWidth < 769) {
   headerSearchInput.setAttribute('placeholder', '');
 }
+
+/*swiperLeft.addEventListener('keydown', (evt) => {
+  evt.preventDefault();
+});
+swiperRight.addEventListener('keydown', (evt) => {
+  evt.preventDefault();
+});*/
 
 /* Функция переключатель для раздела FAQ */
 
@@ -141,6 +151,8 @@ headerMenu.addEventListener('click', () => {
   headerCart.classList.toggle('no-js');
   headerList.classList.toggle('no-js');
   body.classList.toggle('open');
+  main.classList.toggle('hide');
+  footer.classList.toggle('hide');
 });
 
 loginLogo.addEventListener('click', (evt) => {
@@ -157,8 +169,7 @@ menuLogin.addEventListener('click', (evt) => {
   logoImage.style.display = 'none';
   login.classList.remove('hide');
   login.classList.add('show');
-  bodyFixPosition();
-  main.style.opacity = '20%';
+  body.classList.add('open');
 });
 
 // Код по работе с модальным окном
@@ -174,7 +185,7 @@ menuLogin.addEventListener('click', (evt) => {
   evt.preventDefault();
   login.classList.remove('hide');
   loginEmail.focus();
-  bodyFixPosition();
+  body.classList.remove('open');
 });
 
 loginButtonClose.addEventListener('click', () => {

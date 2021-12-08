@@ -2,6 +2,9 @@
   color: $white;
   background: $black;
 }
+.footer.hide {
+  display: none;
+}
 
 .footer__wrapper {
   max-width: 1276px;
