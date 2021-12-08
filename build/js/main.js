@@ -5,6 +5,7 @@ const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const headerMenu = header.querySelector('.header__button-menu');
 const headerSearch = header.querySelector('.header__button-search-container');
+const headerSearchInput = header.querySelector('input[type=search]');
 const headerLogo = header.querySelector('.header__logo');
 const headerAuth = header.querySelector('.header__auth-container');
 const headerCart = header.querySelector('.header__auth-container-cart-tablet');
@@ -25,8 +26,18 @@ const filterArrowUp = document.querySelectorAll('.catalog__filter-arrow-up');
 const filterContent = document.querySelectorAll('.catalog__filter-input-container');
 const catalogButtonFilter = document.querySelector('.catalog__button-filter');
 const modalFilter = document.querySelector('.modal-filter');
+const modalFilterButtons = document.querySelectorAll('.modal-filter__button-container');
 const modalFilterButtonClose = document.querySelector('.modal-filter__form-button-close');
+const modalContent = document.querySelectorAll('.modal-filter__input-container');
+const modalArrowDown = document.querySelectorAll('.modal-filter__arrow-down');
+const modalArrowUp = document.querySelectorAll('.modal-filter__arrow-up');
+const pageWidth = document.documentElement.scrollWidth;
+
+if (pageWidth < 769) {
+  headerSearchInput.setAttribute('placeholder', '');
+}
 /* Функция переключатель для раздела FAQ */
+
 
 const handler = (button, text, up, down) => {
   button.addEventListener('click', () => {
@@ -38,6 +49,21 @@ const handler = (button, text, up, down) => {
       text.classList.toggle('hide');
       up.classList.toggle('hide');
       down.classList.toggle('hide');
+    }
+  });
+  button.addEventListener('keydown', evt => {
+    if (evt.keyCode === 32) {
+      evt.preventDefault();
+
+      if (text.classList.contains('hide')) {
+        text.classList.toggle('hide');
+        up.classList.toggle('hide');
+        down.classList.toggle('hide');
+      } else {
+        text.classList.toggle('hide');
+        up.classList.toggle('hide');
+        down.classList.toggle('hide');
+      }
     }
   });
 };
@@ -60,18 +86,11 @@ for (const section of sections) {
 for (let i = 0; i < filterButtons.length; i++) {
   handler(filterButtons[i], filterContent[i], filterArrowUp[i], filterArrowDown[i]);
 }
-/* Код для работы меню */
 
+for (let i = 0; i < modalFilterButtons.length; i++) {
+  handler(modalFilterButtons[i], modalContent[i], modalArrowUp[i], modalArrowDown[i]);
+}
 
-headerMenu.addEventListener('click', () => {
-  header.classList.toggle('no-js');
-  headerMenu.classList.toggle('no-js');
-  headerSearch.classList.toggle('no-js');
-  headerLogo.classList.toggle('no-js');
-  headerAuth.classList.toggle('no-js');
-  headerCart.classList.toggle('no-js');
-  headerList.classList.toggle('no-js');
-});
 window.addEventListener('load', () => {
   header.classList.remove('no-js');
   headerMenu.classList.remove('no-js');
@@ -85,10 +104,11 @@ window.addEventListener('load', () => {
 const bodyFixPosition = () => {
   setTimeout(() => {
     if (!body.hasAttribute('data-body-scroll-fix')) {
-      body.setAttribute('data-body-scroll-fix', 0);
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      body.setAttribute('data-body-scroll-fix', scrollPosition);
       body.style.overflow = 'hidden';
       body.style.position = 'fixed';
-      body.style.top = '-0px';
+      body.style.top = `-${scrollPosition}px`;
       body.style.left = '0';
       body.style.width = '100%';
     }
@@ -98,16 +118,29 @@ const bodyFixPosition = () => {
 
 const bodyUnfixPosition = () => {
   if (body.hasAttribute('data-body-scroll-fix')) {
+    const scrollPosition = body.getAttribute('data-body-scroll-fix');
     body.removeAttribute('data-body-scroll-fix');
     body.style.overflow = '';
     body.style.position = '';
     body.style.top = '';
     body.style.left = '';
     body.style.width = '';
-    window.scroll(0, 0);
+    window.scroll(0, scrollPosition);
   }
 };
+/* Код для работы меню */
 
+
+headerMenu.addEventListener('click', () => {
+  header.classList.toggle('no-js');
+  headerMenu.classList.toggle('no-js');
+  headerSearch.classList.toggle('no-js');
+  headerLogo.classList.toggle('no-js');
+  headerAuth.classList.toggle('no-js');
+  headerCart.classList.toggle('no-js');
+  headerList.classList.toggle('no-js');
+  body.classList.toggle('open');
+});
 loginLogo.addEventListener('click', evt => {
   evt.preventDefault();
   logoImage.style.display = 'none';
@@ -186,9 +219,11 @@ toPushForm(loginForm, loginEmail);
 
 if (catalogButtonFilter) {
   catalogButtonFilter.addEventListener('click', () => {
-    modalFilter.classList.toggle('hide');
-    main.style.opacity = '10%';
-    bodyFixPosition();
+    if (modalFilter) {
+      modalFilter.classList.remove('hide');
+      main.style.opacity = '10%';
+      bodyFixPosition();
+    }
   });
 }
 /* Обработчик события на кнопку "Закрыть фильтр" */
