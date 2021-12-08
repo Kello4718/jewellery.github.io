@@ -139,6 +139,18 @@
   }
 }
 
+.header__logo svg {
+  width: 66px;
+  height: 66px;
+  @include tablet {
+    order: 2;
+  }
+  @include mobile {
+    width: 52px;
+    height: 52px;
+  }
+}
+
 .header__logo.no-js,
 .header__logo.open {
   @include tablet {
@@ -192,6 +204,7 @@
   @include tablet {
     display: initial;
     margin: 0 0 0 4px;
+    order: 3;
   }
 }
 
@@ -204,7 +217,7 @@
 .header__navigation-list-container {
   width: 100%;
   display: flex;
-  padding: 40px 0 0;
+  padding: 41px 0 0;
   @include tablet {
     display: none
   }
@@ -251,6 +264,8 @@
 .header.no-js,
 .header.open {
   @include tablet {
+    width: 100vw;
+    height: 100vh;
     background: $menu-background;
     padding: 29px 45px 74px;
   }
@@ -302,4 +317,14 @@
     order: 4;
     color: $white;
   }
+}
+
+.header.no-js nav,
+.header.open nav {
+  height: 100vh;
+}
+
+.header.no-js .header__navigation-list a,
+.header.open .header__navigation-list a {
+  color: $white;
 }

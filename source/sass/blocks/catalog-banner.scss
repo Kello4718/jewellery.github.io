@@ -6,23 +6,23 @@
   justify-content: center;
   align-items: center;
   color: $white;
-  background: url('../img/catalog/catalog-banner-desktop.jpg') no-repeat 0 0 / cover;
+  background: rgba(114, 62, 2, 0.623) url('../img/catalog/catalog-banner-desktop.jpg') no-repeat 0 0 / cover;
   margin: 0 0 80px;
   @include retina {
-    background: url('../img/catalog/catalog-banner-desktop@2x.jpg') no-repeat 0 0 / cover;
+    background: rgba(114, 62, 2, 0.623) url('../img/catalog/catalog-banner-desktop@2x.jpg') no-repeat 0 0 / cover;
   }
   @include tablet {
-    background: url('../img/catalog/catalog-banner-tablet.jpg') no-repeat 0 0 / cover;
+    background: rgba(114, 62, 2, 0.623) url('../img/catalog/catalog-banner-tablet.jpg') no-repeat 0 0 / cover;
     margin: 0 0 50px;
     @include retina {
-      background: url('../img/catalog/catalog-banner-tablet@2x.jpg') no-repeat 0 0 / cover;
+      background: rgba(114, 62, 2, 0.623) url('../img/catalog/catalog-banner-tablet@2x.jpg') no-repeat 0 0 / cover;
     }
   }
   @include mobile {
-    background: url('../img/catalog/catalog-banner-mobile.jpg') no-repeat 0 0 / cover;
+    background: rgba(114, 62, 2, 0.623) url('../img/catalog/catalog-banner-mobile.jpg') no-repeat 0 0 / cover;
     margin: 0 0 40px;
     @include retina {
-      background: url('../img/catalog/catalog-banner-mobile@2x.jpg') no-repeat 0 0 / cover;
+      background: rgba(114, 62, 2, 0.623) url('../img/catalog/catalog-banner-mobile@2x.jpg') no-repeat 0 0 / cover;
     }
   }
 }

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .login.hide {
@@ -20,6 +21,7 @@
   display: block;
   padding: 100px 0 0;
   margin: 0 auto;
+
   @include tablet {
     width: 442px;
     padding: 80px 0 0;
@@ -160,12 +162,14 @@
 }
 
 .login__form-forgot {
+  width: max-content;
   font-size: 12px;
   line-height: 18px;
   font-weight: 500;
   text-align: right;
+  display: block;
   color: $grey;
-  margin: 5px 0 45px;
+  margin: 5px 0 45px auto;
   cursor: pointer;
   @include mobile {
     margin: 5px 0 35px;

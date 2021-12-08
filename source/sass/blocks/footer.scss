@@ -68,13 +68,24 @@
 .footer__subscription input {
   font-size: 14px;
   border: none;
-  color: $grey;
+  color: #ffffff;
   background: transparent;
   padding: 2px 0 0 8px;
   cursor: pointer;
   @include tablet {
     padding: 2px 0 0;
   }
+}
+
+.footer__subscription input::placeholder,
+.footer__subscription input::-moz-placeholder,
+.footer__subscription input::-webkit-input-placeholder {
+
+    color: #9B9997;
+  }
+
+.footer__subscription input::placeholder {
+  color: $white;
 }
 
 .footer__subscription button {
@@ -115,6 +126,7 @@
 }
 
 .footer__navigation ul {
+  height: max-content;
   display: grid;
   grid-template-columns: 1fr;
   gap: 21px 44px;
@@ -125,10 +137,15 @@
 }
 
 .footer__navigation ul + ul {
+  height: max-content;
   padding: 0 0 0 32px;
   @include mobile {
     padding: 0;
   }
+}
+
+.footer__navigation li {
+  height: max-content;
 }
 
 .footer__navigation a {

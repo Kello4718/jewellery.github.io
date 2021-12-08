@@ -44,6 +44,9 @@
   justify-content: space-between;
   padding: 44px 48px 40px 42px;
   cursor: pointer;
+  &:focus {
+    outline: 2px solid deepskyblue;
+  }
   @include tablet {
     padding: 43px 50px 41px 49px;
   }

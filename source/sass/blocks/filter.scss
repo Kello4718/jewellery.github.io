@@ -1,4 +1,4 @@
-.filter__form {
+/*.filter__form {
   width: 21.37%;
   position: relative;
   padding: 0;
@@ -38,6 +38,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 23px 23px 28px 25px;
+
   @include tablet {
     padding: 43px 50px 43px 49px;
   }
@@ -53,11 +54,21 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px red;
+  }
+  &:focus-visible {
+
+      outline: 2px solid red;
+      box-shadow: 0 0 2px 2px red;
+  }
 }
 
 .filter__button-container span {
   font-size: 16px;
   line-height: 20.8px;
+
 }
 
 .filter__input-container {
@@ -66,6 +77,7 @@
   flex-flow: column;
   gap: 12px 0;
   padding: 23px 9px 0;
+
 }
 
 .filter__input-container.hide {
@@ -81,7 +93,14 @@
 
 .filter__input-container input {
   appearance: none;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px red;
+  }
 }
+
+
+
 
 
 .filter__input-container span {
@@ -106,6 +125,10 @@
   }
 }
 
+.filter__input-container input:focus + span::before {
+  box-shadow: 0 0 2px 2px red;
+}
+
 .filter__input-container input:checked + span::after {
   content: '';
   width: 15px;
@@ -115,6 +138,10 @@
   left: 0;
   background: #A87B62;
   box-sizing: border-box;
+}
+
+.filter__input-container input:checked:focus + span::after {
+  box-shadow: 0 0 2px 2px red;
 }
 
 .filter__form-fieldset-material-wrapper,
@@ -197,4 +224,271 @@
   background: transparent;
   padding: 23px 0 21px;
   margin: 27px 0 0;
+}*/
+
+.modal-filter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 27px 0 0;
 }
+
+.modal-filter.hide {
+  display: none;
+}
+
+.modal-filter form {
+  width: 458px;
+  height: 841px;
+  height: auto;
+  position: relative;
+  padding: 0;
+  color: #1D1613;
+  background: white;
+  box-shadow: 0px 5px 32px rgba(219, 213, 208, 0.24);
+  @include mobile {
+    width: 280px;
+    height: auto;
+  }
+}
+
+.modal-filter__form-button-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  border-radius: 50%;
+  background: #1D1613;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px red;
+  }
+}
+
+.modal-filter__form-button-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.modal-filter__form-button-close path {
+  fill: white;
+}
+
+.modal-filter__price,
+.modal-filter__collection,
+.modal-filter__product,
+.modal-filter__material {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-filter__price,
+.modal-filter__collection,
+.modal-filter__product,
+.modal-filter__material {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 23px 23px 28px 25px;
+  @include tablet {
+    padding: 40px
+  }
+  @include mobile {
+    min-height: auto;
+    padding: 17px 24px;
+  }
+}
+
+.modal-filter__button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px red;
+  }
+}
+
+.modal-filter__button-container span {
+  font-size: 16px;
+  line-height: 20.8px;
+}
+
+.modal-filter__input-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 12px 0;
+  padding: 23px 9px 0;
+}
+
+.modal-filter__input-container.hide {
+  display: none;
+}
+
+.modal-filter__input-container label {
+  width: 100%;
+  height: max-content;
+  text-align: left;
+  display: flex;
+
+}
+
+.modal-filter__input-container input {
+  appearance: none;
+
+}
+
+.modal-filter__input-container input:focus + span::before {
+  box-shadow: 0 0 2px 2px red;
+}
+
+
+.modal-filter__input-container span {
+  width: 100%;
+  height: max-content;
+  font-size: 14px;
+  line-height: 18.2px;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  padding: 0 0 0 25px;
+
+
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    border: 1px solid #A87B62;
+    box-sizing: border-box;
+    &:focus {
+      width: 15px;
+      height: 15px;
+      border: 2px solid deepskyblue;
+    }
+  }
+}
+
+.modal-filter__input-container input:checked + span::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background: #A87B62;
+  box-sizing: border-box;
+}
+
+.modal-filter__input-container input:checked:focus + span::after {
+  box-shadow: 0 0 2px 2px red;
+}
+
+.modal-filter__form-fieldset-material-wrapper,
+.modal-filter__form-fieldset-collection-wrapper,
+.modal-filter__form-fieldset-price-wrapper {
+  padding: 23px 22px 20px 23px;
+}
+
+.modal-filter__form-fieldset-price-wrapper .modal-filter__button-container {
+  margin: 0 0 4px;
+}
+
+.modal-filter__bar {
+  width: 100%;
+  height: 1px;
+  position: relative;
+  background: #F0EAE4;
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -7px;
+    left: 19.9%;
+    border-radius: 50%;
+    background: #A87B62;
+  }
+  &::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -7px;
+    left: 76.7%;
+    border-radius: 50%;
+    background: #A87B62;
+  }
+}
+
+.modal-filter__bar .modal-filter__bar-main {
+  width: 50%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 28%;
+  background: #A87B62;
+}
+
+.modal-filter__bar-price-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 9% 0 16%;
+}
+
+.modal-filter__bar-price-container p {
+  width: max-content;
+}
+
+.modal-filter__bar-price-container p + p {
+  margin: 0;
+}
+
+.modal__submit,
+.modal__reset {
+  width: 362px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20.8px;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  background: #A87B62;
+  border: 1px solid #A87B62;
+  padding: 25px 0 19px;
+  margin: 34px auto 0;
+  cursor: pointer;
+  @include mobile {
+    width: 230px;
+  }
+}
+
+.modal__reset {
+  background: transparent;
+  padding: 23px 0 21px;
+  margin: 27px auto 0;
+  @include mobile {
+    margin: 20px auto 30px;
+  }
+}
+

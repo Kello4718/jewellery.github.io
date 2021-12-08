@@ -9,7 +9,8 @@
     height: 615px;
   }
   @include mobile {
-    height: 409px;
+    min-height: 409px;
+    height: auto;
   }
 }
 .swiper h2 {
@@ -80,8 +81,8 @@
     max-height: none;
   }
   @include mobile {
-    width: 130px;
-    height: 136px;
+    width: 100%;
+    height: auto;
   }
 }
 
