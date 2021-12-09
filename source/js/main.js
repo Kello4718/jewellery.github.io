@@ -9,8 +9,6 @@ const headerAuth = header.querySelector('.header__auth-container');
 const headerCart = header.querySelector('.header__auth-container-cart-tablet');
 const headerList = header.querySelector('.header__navigation-list-container');
 const main = document.querySelector('main');
-const swiperLeft = document.querySelector('.swiper-button-prev-slide');
-const swiperRight = document.querySelector('.swiper-button-next-slide');
 const sections = document.querySelectorAll('section');
 const login = document.querySelector('.login');
 const loginForm = login.querySelector('form');
@@ -39,44 +37,38 @@ if (pageWidth < 769) {
 }
 
 /* Код для отмены фокуса при открытом модальном окне*/
- 
+
 function trapFocus(element) {
-  var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-  var firstFocusableEl = focusableEls[0];  
-  var lastFocusableEl = focusableEls[focusableEls.length - 1];
-  var KEYCODE_TAB = 9;
+  const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+  const firstFocusableEl = focusableEls[0];
+  const lastFocusableEl = focusableEls[focusableEls.length - 1];
+  const KEYCODE_TAB = 9;
 
-  element.addEventListener('keydown', function(evt) {
-    var isTabPressed = (evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB);
+  element.addEventListener('keydown', (evt) => {
+    const isTabPressed = (evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB);
 
-    if (!isTabPressed) { 
-      return; 
+    if (!isTabPressed) {
+      return;
     }
 
     if ( evt.shiftKey ) /* shift + tab */ {
       if (document.activeElement === firstFocusableEl) {
         lastFocusableEl.focus();
-          evt.preventDefault();
-        }
-      } else /* tab */ {
+        evt.preventDefault();
+      }
+    } else /* tab */ {
       if (document.activeElement === lastFocusableEl) {
         firstFocusableEl.focus();
-          evt.preventDefault();
-        }
+        evt.preventDefault();
       }
+    }
   });
 }
 
-trapFocus(loginForm)
+trapFocus(loginForm);
 
 /* ------------------ */
 
-/*swiperLeft.addEventListener('keydown', (evt) => {
-  evt.preventDefault();
-});
-swiperRight.addEventListener('keydown', (evt) => {
-  evt.preventDefault();
-});*/
 
 /* Функция переключатель для раздела FAQ */
 
