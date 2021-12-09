@@ -39,6 +39,42 @@ const footer = document.querySelector('footer');
 if (pageWidth < 769) {
   headerSearchInput.setAttribute('placeholder', '');
 }
+/* Код для отмены фокуса при открытом модальном окне*/
+
+
+function trapFocus(element) {
+  var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+  var firstFocusableEl = focusableEls[0];
+  var lastFocusableEl = focusableEls[focusableEls.length - 1];
+  var KEYCODE_TAB = 9;
+  element.addEventListener('keydown', function (evt) {
+    var isTabPressed = evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB;
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (evt.shiftKey)
+      /* shift + tab */
+      {
+        if (document.activeElement === firstFocusableEl) {
+          lastFocusableEl.focus();
+          evt.preventDefault();
+        }
+      } else
+      /* tab */
+      {
+        if (document.activeElement === lastFocusableEl) {
+          firstFocusableEl.focus();
+          evt.preventDefault();
+        }
+      }
+  });
+}
+
+trapFocus(loginForm);
+/* ------------------ */
+
 /*swiperLeft.addEventListener('keydown', (evt) => {
   evt.preventDefault();
 });
@@ -47,7 +83,6 @@ swiperRight.addEventListener('keydown', (evt) => {
 });*/
 
 /* Функция переключатель для раздела FAQ */
-
 
 const handler = (button, text, up, down) => {
   button.addEventListener('click', () => {
