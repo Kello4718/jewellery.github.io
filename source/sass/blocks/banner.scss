@@ -7,22 +7,28 @@
   align-items: center;
   color: $white;
   background: rgba(114, 62, 2, 0.623) url('../img/index/main-banner-desktop.jpg') no-repeat 0 0 / cover;
+  background-color: rgba(114, 62, 2, 0.623);
   margin: 0 0 120px;
   @include retina {
     background: rgba(114, 62, 2, 0.623) url('../img/index/main-banner-desktop@2x.jpg') no-repeat 0 0 / cover;
+    background-color: rgba(114, 62, 2, 0.623);
   }
   @include tablet {
     background: rgba(114, 62, 2, 0.623) url('../img/index/main-banner-tablet.jpg') no-repeat 0 0 / cover;
+    background-color: rgba(114, 62, 2, 0.623);
     margin: 0 0 72px;
     @include retina {
       background: rgba(114, 62, 2, 0.623) url('../img/index/main-banner-tablet@2x.jpg') no-repeat 0 0 / cover;
+      background-color: rgba(114, 62, 2, 0.623);
     }
   }
   @include mobile {
     background: rgba(114, 62, 2, 0.623) url('../img/index/main-banner-mobile.jpg') no-repeat 0 0 / cover;
+    background-color: rgba(114, 62, 2, 0.623);
     margin: 0 0 62px;
     @include retina {
       background: rgba(114, 62, 2, 0.623) url('../img/index/main-banner-mobile@2x.jpg') no-repeat 0 0 / cover;
+      background-color: rgba(114, 62, 2, 0.623);
     }
   }
 }
